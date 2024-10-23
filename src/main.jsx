@@ -4,6 +4,7 @@ import "./index.css";
 import { MantineProvider } from "@mantine/core";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/Routes";
+import '@mantine/core/styles.css';
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
