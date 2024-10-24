@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* dropdown */
+.m_8fb7ebe7 {
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #e5332d !important;
+}
+
+.m_46b77525:hover .m_8fb7ebe7{
+    color: #e5332d !important;
+}
+
+/* dropdown content */
+.m_38a85659 {
+    width: 300px !important;
+    padding: 5px !important;
+    height: auto !important;
+    overflow-y: visible !important;
+}
+
+/* dropdown content text */
+.m_92253aa5{
+ font-size: 17px !important;
+ color: #475569 !important;
+}
+
+/* selected text */
+.m_8fb7ebe7{
+    
+}
+
+
+.btn-pcbuild {
+    background: linear-gradient(45deg, #eb2a24, #f89292, #eb2a24);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border: none;
+    line-height: 42px; 
+    padding:10px 20px
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
