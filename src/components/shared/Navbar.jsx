@@ -1,19 +1,4 @@
-import { useState } from "react";
-import {
-  Container,
-  Group,
-  Burger,
-  Transition,
-  Paper,
-  Flex,
-  Box,
-  AppShell,
-  Image,
-  Select,
-  Text,
-  Button,
-} from "@mantine/core";
-import { Link } from "react-router-dom";
+import { Group, Flex, Box, AppShell, Image, Select, Text } from "@mantine/core";
 import {
   FaPhone,
   FaFacebook,
@@ -27,9 +12,10 @@ import { MdLocalOffer } from "react-icons/md";
 import { IoSearch, IoPersonSharp } from "react-icons/io5";
 import { AiFillThunderbolt } from "react-icons/ai";
 
-const Navbar = () => {
-  const [opened, setOpened] = useState(false);
+import Categories from "../categories/Categories";
+// Combobox
 
+const Navbar = () => {
   return (
     <Box>
       <Box bg={"#1e283e"} className="lg:block hidden">
@@ -80,13 +66,12 @@ const Navbar = () => {
       </Box>
 
       {/* ----- second header --------- */}
-      <AppShell className="fixed lg:static bottom-0 left-0 w-full bg-[#0f172a]  lg:bg-[#ffffff] py-4">
+      <AppShell className=" w-full bg-[#ffffff] py-4">
         <Box className="w-11/12 mx-auto lg:gap-10 flex items-center justify-between">
           {/* Logo and Search Section */}
           <Box className="lg:flex hidden items-center w-1/2 gap-10">
             <Image src="./logo.svg" h={50} w="auto" fit="contain" />
             <Box className="flex gap-2 items-center justify-center my-5 p-2 rounded-md bg-[#EEEEEE] w-full text-xl">
-              
               <Select
                 placeholder="Category "
                 data={[
@@ -148,21 +133,21 @@ const Navbar = () => {
                 </Text>
               </Box>
             </Flex>
-           <div className="hidden lg:block">
-           <button className="btn-pcbuild">PC Build</button>
-           </div>
+            <div className="hidden lg:block">
+              <button className="btn-pcbuild">PC Build</button>
+            </div>
           </Group>
         </Box>
       </AppShell>
-    
-      <nav
-        className="sticky top-0 left-0 z-10"
+
+      <div 
+        className="sticky top-0 left-0 z-10 py-[12px] "
         style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px" }}
       >
-        lav links
-      </nav>
-
-     
+        <div className="w-11/12 mx-auto">
+        <Categories />
+        </div>
+      </div>
     </Box>
   );
 };

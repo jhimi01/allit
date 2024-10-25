@@ -1,6 +1,7 @@
 .indicator {
   border-radius: 0px !important;
-  width: 50px !important;
+  width: 35px !important;
+  height: 4px !important;
 }
 
 .control {
