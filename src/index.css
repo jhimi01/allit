@@ -1,6 +1,37 @@
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary: #e5332d;
+    --light-bg: #f4faff;
+    --lighter-bg: #f5f5f5;
+    --light-gray: #eee;
+    --text-light: hsla(0, 0%, 100%, .66);
+    --dark: #0f172a;
+    --blue-gray: #475569;
+    --text-muted: rgba(0, 0, 0, .51);
+    --border: #dadada;
+    --table-border: rgba(0, 0, 0, .2);
+    --light-border: #f4faff;
+    --shadow: rgba(0, 0, 0, .3);
+    --green-flag: #c9e8bc;
+    --gold-flag: #ffecc3;
+    --red-flag: rgba(229, 51, 45, .06);
+    --dark-blue: #1e283e;
+    --text-lightest: #b3b3b3;
+    --card-bg: #f8fafc;
+    --gold-flag-text: #644915;
+    --green-flag-text: #2d6415;
+    --tab-btn: #64748b;
+    --darkest-blue: #0c1222;
+    --social-link-light: #d2d2d2;
+}
+
 
 /* dropdown */
 .m_8fb7ebe7 {
@@ -29,9 +60,6 @@
 }
 
 /* selected text */
-.m_8fb7ebe7{
-    
-}
 
 
 .btn-pcbuild {
@@ -40,7 +68,11 @@
     animation: gradient 15s ease infinite;
     border: none;
     line-height: 42px; 
-    padding:10px 20px
+    padding:3px 22px;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 @keyframes gradient {

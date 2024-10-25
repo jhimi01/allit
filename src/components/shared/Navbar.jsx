@@ -24,7 +24,7 @@ import {
 import { IoMdMail } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 import { MdLocalOffer } from "react-icons/md";
-import { IoSearchOutline, IoPersonSharp } from "react-icons/io5";
+import { IoSearch, IoPersonSharp } from "react-icons/io5";
 import { AiFillThunderbolt } from "react-icons/ai";
 
 const Navbar = () => {
@@ -39,9 +39,9 @@ const Navbar = () => {
           py={14}
           className="text-white w-11/12 mx-auto text-lg  text-[hsla(0,0%,100%,.66)]"
         >
-          <Group>
+          <Group gap={30}>
             <Flex gap="sm" align="center" direction="row" wrap="">
-              <FaPhone className="text-[#fff]" /> 01810079260
+              <FaPhone className="text-[#fff] text-[15px]" /> 01810079260
             </Flex>
             <Flex
               gap="sm"
@@ -50,7 +50,7 @@ const Navbar = () => {
               direction="row"
               wrap=""
             >
-              <FaPhone className="text-[#fff]" /> 01810079263
+              <FaPhone className="text-[#fff] text-[15px]" /> 01810079263
             </Flex>
             <Flex
               gap="sm"
@@ -59,11 +59,11 @@ const Navbar = () => {
               direction="row"
               wrap=""
             >
-              <IoMdMail className="text-[#fff]" /> info@allit.com.bd
+              <IoMdMail className="text-[#fff] text-[15px]" /> info@allit.com.bd
             </Flex>
           </Group>
           <Group gap={30}>
-            <Box className="text-[#fff] font-bold">Follow Us</Box>
+            <Box className="text-[#fff] text-[15px] font-bold">Follow Us</Box>
             <Flex gap={24} className="text-[22px]">
               <FaFacebook />
 
@@ -78,12 +78,15 @@ const Navbar = () => {
           </Group>
         </Flex>
       </Box>
-      <AppShell className="py-5 bg-[#ffffff]">
-        <Box className="w-11/12 mx-auto flex items-center justify-between ">
-          {/* form section */}
-          <Box className="flex items-center gap-10">
+
+      {/* ----- second header --------- */}
+      <AppShell className="fixed lg:static bottom-0 left-0 w-full bg-[#0f172a]  lg:bg-[#ffffff] py-4">
+        <Box className="w-11/12 mx-auto lg:gap-10 flex items-center justify-between">
+          {/* Logo and Search Section */}
+          <Box className="lg:flex hidden items-center w-1/2 gap-10">
             <Image src="./logo.svg" h={50} w="auto" fit="contain" />
-            <Box className="flex gap-2 items-center justify-center my-5  p-2 rounded-md bg-[#EEEEEE] mx-auto text-xl">
+            <Box className="flex gap-2 items-center justify-center my-5 p-2 rounded-md bg-[#EEEEEE] w-full text-xl">
+              
               <Select
                 placeholder="Category "
                 data={[
@@ -103,42 +106,55 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search"
-                style={{'backgroundColor': 'transparent'}}
+                style={{ backgroundColor: "transparent" }}
                 className="text-primary bg-transparent outline-none w-full placeholder:text-slate-400 border-none"
               />
-              <IoSearchOutline className="text-[#444] text-3xl" />
+              <IoSearch className="text-[#444] text-4xl" />
             </Box>
           </Box>
 
-          {/* offers, deals, pc build */}
-          {/* className="flex items-center justify-center gap-1" */}
-          <Group justify="space-between" flex={1}>
+          {/* Offers, Deals, PC Build */}
+          <Group justify="s" gap={50}>
             <Flex align={"center"} gap={5}>
               <MdLocalOffer className="text-primary text-2xl" />
               <Box className="leading-5">
-              <Text size="lg">Offers</Text>
-              <Text size="xs" c={'gray'}>Latest Offers</Text>
+                <Text size="lg">Offers</Text>
+                <Text
+                  mt={-9}
+                  size="xs"
+                  fw={500}
+                  c={"#b3b3b3"}
+                  className="-mt-2"
+                >
+                  Latest Offers
+                </Text>
               </Box>
             </Flex>
             <Flex align={"center"} gap={5}>
               <AiFillThunderbolt className="text-primary text-2xl" />
               <Box className="leading-5">
-              <Text size="lg">Best Deals</Text>
-              <Text size="xs" c={'gray'}>Latest Deals</Text>
+                <Text size="lg">Best Deals</Text>
+                <Text mt={-9} size="xs" fw={500} c={"#b3b3b3"}>
+                  Latest Deals
+                </Text>
               </Box>
             </Flex>
             <Flex align={"center"} gap={5}>
               <IoPersonSharp className="text-primary text-2xl" />
               <Box className="leading-5">
-              <Text size="lg">Account</Text>
-              <Text size="xs" c={'gray'}>Reqister or Login</Text>
+                <Text size="lg">Account</Text>
+                <Text mt={-9} size="xs" c={"#b3b3b3"} fw={500}>
+                  Register or Login
+                </Text>
               </Box>
             </Flex>
-            <button className="btn-pcbuild">Button</button>
+           <div className="hidden lg:block">
+           <button className="btn-pcbuild">PC Build</button>
+           </div>
           </Group>
         </Box>
       </AppShell>
-
+    
       <nav
         className="sticky top-0 left-0 z-10"
         style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px" }}
@@ -146,83 +162,7 @@ const Navbar = () => {
         lav links
       </nav>
 
-      <Container className="flex items-center justify-between py-4">
-        {/* Logo Section */}
-        <div className="text-2xl font-bold">Logo</div>
-
-        {/* Links Section - Hidden on smaller devices */}
-        <nav className="hidden md:block">
-          <Group spacing="xl">
-            <Link to="/" className="hover:text-gray-400">
-              Home
-            </Link>
-            <Link to="/about" className="hover:text-gray-400">
-              About
-            </Link>
-            <Link to="/services" className="hover:text-gray-400">
-              Services
-            </Link>
-            <Link to="/contact" className="hover:text-gray-400">
-              Contact
-            </Link>
-          </Group>
-        </nav>
-
-        {/* Hamburger Icon - Visible on smaller devices */}
-        <Burger
-          opened={opened}
-          onClick={() => setOpened((prev) => !prev)}
-          className="md:hidden"
-          color="white"
-          size="sm"
-        />
-      </Container>
-
-      {/* Mobile Menu - Shown only when opened */}
-      <Transition
-        mounted={opened}
-        transition="scale-y"
-        duration={200}
-        timingFunction="ease"
-      >
-        {(styles) => (
-          <Paper
-            style={styles}
-            className="md:hidden absolute top-16 left-0 w-full bg-[#0f172a] z-50 text-black"
-          >
-            <Group direction="column" spacing="lg" className="p-4">
-              <Link
-                to="/"
-                className="hover:text-gray-400"
-                onClick={() => setOpened(false)}
-              >
-                Home
-              </Link>
-              <Link
-                to="/about"
-                className="hover:text-gray-400"
-                onClick={() => setOpened(false)}
-              >
-                About
-              </Link>
-              <Link
-                to="/services"
-                className="hover:text-gray-400"
-                onClick={() => setOpened(false)}
-              >
-                Services
-              </Link>
-              <Link
-                to="/contact"
-                className="hover:text-gray-400"
-                onClick={() => setOpened(false)}
-              >
-                Contact
-              </Link>
-            </Group>
-          </Paper>
-        )}
-      </Transition>
+     
     </Box>
   );
 };

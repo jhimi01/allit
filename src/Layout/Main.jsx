@@ -6,7 +6,9 @@ const Main = () => {
     <div>
         {/* header */}
         <Navbar />
+      <div className="bg-lighterBg">
       <Outlet />
+      </div>
       {/* footer */}
     </div>
   )

@@ -1,0 +1,23 @@
+.indicator {
+  border-radius: 0px !important;
+  width: 50px !important;
+}
+
+.control {
+  height: 65px !important;
+  width: 21px !important;
+  background-color: hsla(0, 0%, 100%, 0.4) !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+  border: none !important;
+  font-size: 100px !important; /* Adjust size */
+  --mantine-scale: 2 !important;
+}
+
+.controls {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-direction: row !important;
+  padding: 0px !important;
+}

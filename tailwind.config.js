@@ -4,6 +4,11 @@ export default {
   theme: {
     colors: {
       primary: "#e5332d",
+      dark: "#0f172a",
+      lighterBg: "#f4faff",
+      border: "#dadada",
+      cardbg: "#f8fafc",
+      bluegray: "#475569"
     },
     extend: {},
   },
