@@ -1,0 +1,31 @@
+/* Categories.module.css */
+.dropdown{
+
+outline: 2px solid #fe0d45;
+outline-offset: -2px;
+width: 100p !important;
+height: 80% !important;
+background-color: #fff;
+}
+.menuDropdown {
+    display: block !important;
+    max-height: calc(8 * 50px); /* Assuming each item has ~50px height, adjust if needed */
+    column-count: auto; /* Automatically determines columns based on item count */
+    column-width: 150px; /* Adjust width for each column */
+    column-gap: 20px; /* Space between columns */
+    overflow-y: auto; /* Allows scrolling if items exceed max-height */
+    background-color: #fff !important;
+  }
+  
+  .menuDropdownitems {
+    padding: 13px !important;
+    display: inline-block; /* Ensures each item fits within a column */
+    width: 100%; /* Takes full column width */
+    break-inside: avoid; /* Prevents items from breaking between columns */
+  }
+  
+  .menuDropdownitems:hover {
+    background-color: #eb2a24;
+    color: #00000084 !important;
+  }
+  

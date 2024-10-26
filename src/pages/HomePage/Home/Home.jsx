@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text, Title } from "@mantine/core";
+import { Box, Flex, Image } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import Marquee from "react-fast-marquee";
 import { GoDotFill } from "react-icons/go";
@@ -81,7 +81,7 @@ const Home = () => {
         </Box>
       </Flex>
 
-      <div className="py-4 border border-border mt-10 bg-[#fff] text-lg text-dark">
+      <div className="py-20 border border-border mt-10 bg-[#fff] text-lg text-dark">
         <Marquee>
           <GoDotFill className="text-[11px] mr-3 text-[#5ea19d]" />
           Please call our support number after placing the order. Phone numbers:

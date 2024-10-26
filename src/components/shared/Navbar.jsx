@@ -17,7 +17,7 @@ import Categories from "../categories/Categories";
 
 const Navbar = () => {
   return (
-    <Box>
+    <header>
       <Box bg={"#1e283e"} className="lg:block hidden">
         <Flex
           justify="space-between"
@@ -70,10 +70,10 @@ const Navbar = () => {
         <Box className="w-11/12 mx-auto lg:gap-10 flex items-center justify-between">
           {/* Logo and Search Section */}
           <Box className="lg:flex hidden items-center w-1/2 gap-10">
-            <Image src="./logo.svg" h={50} w="auto" fit="contain" />
-            <Box className="flex gap-2 items-center justify-center my-5 p-2 rounded-md bg-[#EEEEEE] w-full text-xl">
+            <Image src="./logo.svg" h={50} w="auto" fit="contain" mr={20} />
+            <Box className="flex gap-2 items-center justify-center my-5 p-[5px] rounded-md bg-[#EEEEEE] w-full text-xl">
               <Select
-                placeholder="Category "
+                placeholder="Category"
                 data={[
                   "Desktop",
                   "Monitor",
@@ -92,7 +92,7 @@ const Navbar = () => {
                 type="text"
                 placeholder="Search"
                 style={{ backgroundColor: "transparent" }}
-                className="text-primary bg-transparent outline-none w-full placeholder:text-slate-400 border-none"
+                className="text-primary bg-transparent outline-none w-full placeholder:text-slate-400 placeholder:text-lg border-none"
               />
               <IoSearch className="text-[#444] text-4xl" />
             </Box>
@@ -140,15 +140,17 @@ const Navbar = () => {
         </Box>
       </AppShell>
 
-      <div 
-        className="sticky top-0 left-0 z-10 py-[12px] "
-        style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px" }}
+      <div
+        className="sticky top-0 z-50 py-[12px] bg-white w-full"
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px",
+        }}
       >
         <div className="w-11/12 mx-auto">
-        <Categories />
+          <Categories />
         </div>
       </div>
-    </Box>
+    </header>
   );
 };
 

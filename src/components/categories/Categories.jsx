@@ -1,4 +1,5 @@
-import {  Menu, Button } from "@mantine/core";
+import { Menu, Button } from "@mantine/core";
+import classes from "./Categories.module.css";
 
 import categoryData from "./categoryData .js";
 import { Link } from "react-router-dom";
@@ -8,18 +9,52 @@ const Categories = () => {
   return (
     <div className="space-x-1">
       {categoryData.map((category, index) => (
-        <Menu key={index} trigger="hover" offset={15}  arrowPosition="center" shadow="md" width={150}>
+        <Menu
+          key={index}
+          trigger="hover"
+          offset={15}
+          arrowPosition="center"
+          shadow="md"
+        
+        >
           <Menu.Target>
             <Link to={category?.path}>
-              <Button>{category?.label} <IoIosArrowDown className="ml-1 text-bluegray text-xs" /></Button>
+              <Button>
+                {category?.label}
+                <IoIosArrowDown className="ml-1 text-bluegray text-xs" />
+              </Button>
             </Link>
           </Menu.Target>
 
-          <Menu.Dropdown>
-            {category?.items.map((categoryitem, index) => (
-              <Menu.Item key={index}>{categoryitem.itemsLabel}</Menu.Item>
-            ))}
-          </Menu.Dropdown>
+          <Menu.Dropdown
+           classNames={{
+            dropdown: classes.dropdown,
+          }}
+  style={{
+    backgroundColor: "#fff", // Ensure this is set directly
+    padding: "10px", // Add padding for consistent background fill
+    boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Optional shadow for contrast
+    borderRadius: "4px", // Optional border radius for styling
+    overflowY: "auto", // Allow scroll if items exceed max height
+    maxHeight: "calc(8 * 50px)" // Constrain height to 8 rows
+  }}
+  className={classes.menuDropdown}
+>
+  {category?.items.map((categoryitem, index) => (
+    <Menu.Item
+      className={classes.menuDropdownitems}
+      style={{
+        color: "#808080",
+        fontSize: "18px",
+        fontWeight: "600"
+      }}
+      key={index}
+    >
+      {categoryitem.itemsLabel}
+    </Menu.Item>
+  ))}
+</Menu.Dropdown>
+
         </Menu>
       ))}
     </div>
