@@ -11,7 +11,6 @@ import { RiInstagramFill } from "react-icons/ri";
 import { MdLocalOffer } from "react-icons/md";
 import { IoSearch, IoPersonSharp } from "react-icons/io5";
 import { AiFillThunderbolt } from "react-icons/ai";
-import CategoryNav from "./CategoryNav";
 import MobileNav from "./MobileNav";
 // Combobox
 
@@ -73,7 +72,7 @@ const Navbar = () => {
           <Box className="w-11/12 mx-auto lg:gap-10 flex items-center justify-between">
             {/* Logo and Search Section */}
             <Box className="lg:flex hidden items-center w-1/2 gap-10">
-              <Image src="./logo.svg" h={50} w="auto" fit="contain" mr={20} />
+              <Image src="./all-it.webp" w="auto" h={70} />
               <Box className="flex gap-2 items-center justify-center my-5 p-[5px] rounded-md bg-[#EEEEEE] w-full text-xl">
                 <Select
                   placeholder="Category"
@@ -144,7 +143,7 @@ const Navbar = () => {
         </AppShell>
       </div>
       <div className="lg:hidden">
-      <MobileNav />
+        <MobileNav />
       </div>
     </header>
   );

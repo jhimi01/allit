@@ -15,4 +15,4 @@ function CategoryNav() {
   )
 }
 
-export default CategoryNav
+export default CategoryNav;
