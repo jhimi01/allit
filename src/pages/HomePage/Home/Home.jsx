@@ -10,12 +10,11 @@ const Home = () => {
   return (
     <div className="w-11/12 mx-auto pt-[32px] pb-[28px]">
       <Flex className="gap-10 lg:flex-row flex-col-reverse">
-        {/* Adjust gutter size */}
         <Box className="w-full lg:w-[25%] border-border border-[1px] bg-cardbg lg:py-[56px] px-[24px]">
-          <h2 className="text-xl sm:text-2xl sm:text-start text-center leading-6  my-1 font-bold text-dark">
+          <h2 className="text-xl sm:text-2xl sm:text-start text-center leading-6 my-1 font-bold text-dark">
             Compare Products
           </h2>
-          <p className="text-bluegray text-sm sm:text-base mb-3 sm:mb-9 text-center sm:text-start ">
+          <p className="text-bluegray text-sm sm:text-base mb-3 sm:mb-9 text-center sm:text-start">
             Choose Two Products to Compare
           </p>
           <Box className="flex gap-2 items-center justify-center my-5 py-1 px-2 rounded-md bg-[#fff] w-full text-xl">
@@ -44,33 +43,33 @@ const Home = () => {
         <Box className="lg:w-[75%] w-full">
           <Carousel
             withIndicators
-            height={450}
-            width={"100%"}
+            width="100%"
             slideSize="100%"
+            height={450}
             loop
             slidesToScroll={1}
+            className="aspect-video lg:aspect-auto lg:h-auto w-full " // Fixed height for lg, aspect ratio for smaller screens
             classNames={{
               indicator: classes.indicator,
               control: classes.control,
               controls: classes.controls,
             }}
           >
-            <Carousel.Slide className="h-full w-full">
+            <Carousel.Slide>
               <Image
-                className="w-auto object-fill h-auto"
-                fit="cover"
+                className="w-full h-full object-cover"
                 src="https://allit.com.bd/_next/image?url=https%3A%2F%2Fallit.com.bd%3A81%2Fuploads%2Fall%2F4fhEaaXyfibETHENI8utifaQxoPLuQjxi05wN45q.jpg&w=1080&q=75"
               />
             </Carousel.Slide>
-            <Carousel.Slide className="h-full w-full">
+            <Carousel.Slide>
               <Image
-                className="w-auto object-fill h-auto"
+                className="w-full h-full object-cover"
                 src="https://allit.com.bd/_next/image?url=https%3A%2F%2Fallit.com.bd%3A81%2Fuploads%2Fall%2FNOL0uAVWlm6q7vPAt6NhRtQVtG1EbX1NBOjVpwfY.jpg&w=1080&q=75"
               />
             </Carousel.Slide>
-            <Carousel.Slide className="h-full w-full">
+            <Carousel.Slide>
               <Image
-                className="w-auto object-fill h-auto"
+                className="w-full h-full object-cover"
                 src="https://allit.com.bd/_next/image?url=https%3A%2F%2Fallit.com.bd%3A81%2Fuploads%2Fall%2FG0gQP2T5uzyoNSKKTuvjfRpyju2Khf3VcnyzWqJg.jpg&w=1080&q=75"
               />
             </Carousel.Slide>

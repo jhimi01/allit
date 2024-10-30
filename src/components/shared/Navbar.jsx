@@ -90,14 +90,21 @@ const Navbar = () => {
                     "Component",
                     "Office Equipment",
                     "Accessories",
-                    "NetWorking",
+                    "Networking",
                     "Photocopier",
                     "Projector",
-                    "Laptop Acessorise",
+                    "Laptop Accessories",
                     "Software",
                     "Gaming",
                   ]}
+                  maxDropdownHeight={430}
+                  sx={{
+                    item: {
+                      fontSize: '12px !important',
+                    },
+                  }}
                 />
+
                 <input
                   type="text"
                   placeholder="Search"
