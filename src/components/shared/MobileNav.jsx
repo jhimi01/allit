@@ -6,10 +6,13 @@ import {
   Drawer,
   Group,
   Image,
+  Indicator,
+  Modal,
+  Select,
   Text,
   TextInput,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
 
 const MobileNav = () => {
@@ -18,8 +21,12 @@ const MobileNav = () => {
   const [openedSearch, { toggle: toggleSearch, close: closeSearch }] =
     useDisclosure(false);
 
+  const [openedModal, { open: openModal, close: closeModal }] =
+    useDisclosure(false);
+  const isMobile = useMediaQuery("(max-width: 10em)");
+
   return (
-    <div className="bg-dark text-white">
+    <div className="bg-dark text-white px-2">
       <Drawer
         opened={openedDrawer}
         onClose={closeDrawer}
@@ -30,7 +37,7 @@ const MobileNav = () => {
         {/* Drawer content */}
       </Drawer>
 
-      <div className="px-2 flex items-center justify-between mx-auto">
+      <div className="flex items-center justify-between">
         <Burger
           lineSize={2}
           size="md"
@@ -42,33 +49,61 @@ const MobileNav = () => {
 
         <Image src="./all-it.webp" w={70} h={65} />
 
-        <Box className="text-2xl flex">
-          <IoCartOutline />
+        <Box className="text-2xl flex items-center gap-2 ">
           <Group justify="center">
-            <Button onClick={toggleSearch}>
-              <IoSearch className="text-white mr-2" />
-            </Button>
+            <IoSearch onClick={toggleSearch} className="text-white mr-2" />
           </Group>
 
-          <Dialog
+          <Modal
             opened={openedSearch}
-            withCloseButton
             onClose={closeSearch}
-            size="lg"
-            radius="md"
+            fullScreen={isMobile}
+            withCloseButton={false}
+            transitionProps={{ transition: "fade", duration: 200 }}
+            className="lg:hidden"
           >
-            <Text size="sm" mb="xs" fw={500}>
-              Subscribe to email newsletter
-            </Text>
+            <Box className="">
+              <Box className="flex gap-2 items-center justify-center px-[5px] rounded-sm bg-[#EEEEEE] w-full text-xl">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  style={{ backgroundColor: "transparent" }}
+                  className="text-primary bg-transparent outline-none w-full placeholder:text-slate-400 placeholder:text-lg border-none"
+                />
+                <IoSearch className="text-[#444] text-4xl" />
+              </Box>
+            </Box>
+          </Modal>
 
-            <Group align="flex-end">
-              <TextInput
-                placeholder="hello@gluesticker.com"
-                style={{ flex: 1 }}
-              />
-              <Button onClick={closeSearch}>Subscribe</Button>
+          {/* added cart */}
+          <Indicator
+            inline
+            label="0"
+            onClick={openModal}
+            color="#e5332d"
+            p={0}
+            size={16}
+          >
+            <IoCartOutline />
+          </Indicator>
+
+          <Modal
+            opened={openedModal}
+            onClose={closeModal}
+            title="Cart"
+            fullScreen={isMobile}
+            transitionProps={{ transition: "fade", duration: 200 }}
+            className="lg:hidden"
+          >
+            <Group className="flex items-center justify-center w-full">
+              <button className="w-full flex-1 my-auto bg-[#e52923] text-white text-[16px] rounded-sm py-1 font- px-[17px]">
+              Go to Cart
+            </button>
+              <button className="w-full flex-1 my-auto bg-none text-primary text-[16px] rounded-sm outline outline-2 outline-[#e52923]  px-[17px]">
+              Checkout
+            </button>
             </Group>
-          </Dialog>
+          </Modal>
         </Box>
       </div>
     </div>
