@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap'); */
+
 
 @tailwind base;
 @tailwind components;
@@ -28,6 +28,18 @@
   --tab-btn: #64748b;
   --darkest-blue: #0c1222;
   --social-link-light: #d2d2d2;
+}
+
+.custom_container{
+  max-width: 1440px  !important;
+  margin: 0 auto !important;
+}
+
+
+.m_811560b9 {
+  font-size:16px !important;
+  gap: 4px;
+  margin-right: 1px;
 }
 
 /* dropdown */
@@ -63,12 +75,12 @@
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   border: none;
-  line-height: 42px;
-  padding: 3px 22px;
+  /* line-height: 42px; */
+  padding: 9px 25px;
   border-radius: 7px;
   color: #fff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 @keyframes gradient {
@@ -91,4 +103,10 @@
 }
 .m_77c9d27d:hover {
   color: #808080 !important;
+}
+
+
+.m_60c222c7{
+  padding-inline: none !important;
+  width: 100% !important;
 }

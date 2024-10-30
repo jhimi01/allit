@@ -11,10 +11,10 @@ const Main = () => {
     <div>
       {/* header */}
       <Navbar />
-      <div className="hidden lg:block">
+      <div className="hidden sticky top-0 z-50 lg:block ">
       <CategoryNav />
       </div>
-      <div className="bg-lighterBg  -z-10">
+      <div className="bg-lighterBg -z-10 ">
         <Outlet />
       </div>
       <Affix hidden="sm" position={{ bottom: 25, left: 20 }}>

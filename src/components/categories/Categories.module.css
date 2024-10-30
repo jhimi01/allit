@@ -1,11 +1,12 @@
 /* Categories.module.css */
 .dropdown{
 
-outline: 2px solid #fe0d45;
-outline-offset: -2px;
-width: 100p !important;
-height: 80% !important;
-background-color: #fff;
+/* outline: 2px solid #fe0d45; */
+/* outline-offset: -2px !important; */
+width: auto !important;
+height: auto !important;
+background-color: #fff !important;
+background:P #fff !important;
 }
 .menuDropdown {
     display: block !important;
@@ -18,14 +19,15 @@ background-color: #fff;
   }
   
   .menuDropdownitems {
-    padding: 13px !important;
+    padding: 10px 13px !important;
     display: inline-block; /* Ensures each item fits within a column */
     width: 100%; /* Takes full column width */
     break-inside: avoid; /* Prevents items from breaking between columns */
+    background-color: #fff !important;
   }
   
   .menuDropdownitems:hover {
-    background-color: #eb2a24;
+    background-color: #eb2a24 !important;
     color: #00000084 !important;
   }
   

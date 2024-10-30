@@ -3,7 +3,7 @@ import Categories from '../categories/Categories'
 function CategoryNav() {
   return (
     <div
-    className="sticky top-0 z-[100] py-[12px] bg-white w-full"
+    className="sticky top-0 z-[100] py-[8px] bg-white w-full"
     style={{
       boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px",
     }}

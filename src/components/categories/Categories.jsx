@@ -20,7 +20,7 @@ const Categories = () => {
             <Link to={category?.path}>
               <Button>
                 {category?.label}
-                <IoIosArrowDown className="ml-1 text-bluegray text-xs" />
+                <IoIosArrowDown className=" text-center text-bluegray text-[9px]" />
               </Button>
             </Link>
           </Menu.Target>

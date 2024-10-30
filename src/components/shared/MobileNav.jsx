@@ -1,16 +1,11 @@
 import {
   Box,
   Burger,
-  Button,
-  Dialog,
   Drawer,
   Group,
   Image,
   Indicator,
   Modal,
-  Select,
-  Text,
-  TextInput,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
@@ -23,7 +18,7 @@ const MobileNav = () => {
 
   const [openedModal, { open: openModal, close: closeModal }] =
     useDisclosure(false);
-  const isMobile = useMediaQuery("(max-width: 10em)");
+  const isMobile = useMediaQuery("(width: 95vw)");
 
   return (
     <div className="bg-dark text-white px-2">
@@ -58,6 +53,7 @@ const MobileNav = () => {
             opened={openedSearch}
             onClose={closeSearch}
             fullScreen={isMobile}
+            size="100%"
             withCloseButton={false}
             transitionProps={{ transition: "fade", duration: 200 }}
             className="lg:hidden"
@@ -68,9 +64,9 @@ const MobileNav = () => {
                   type="text"
                   placeholder="Search"
                   style={{ backgroundColor: "transparent" }}
-                  className="text-primary bg-transparent outline-none w-full placeholder:text-slate-400 placeholder:text-lg border-none"
+                  className="text-primary bg-transparent outline-none w-full placeholder:text-slate-400 p-1 placeholder:text-lg border-none"
                 />
-                <IoSearch className="text-[#444] text-4xl" />
+                <IoSearch className="text-[#444] text-2xl" />
               </Box>
             </Box>
           </Modal>
@@ -95,13 +91,13 @@ const MobileNav = () => {
             transitionProps={{ transition: "fade", duration: 200 }}
             className="lg:hidden"
           >
-            <Group className="flex items-center justify-center w-full">
-              <button className="w-full flex-1 my-auto bg-[#e52923] text-white text-[16px] rounded-sm py-1 font- px-[17px]">
-              Go to Cart
-            </button>
-              <button className="w-full flex-1 my-auto bg-none text-primary text-[16px] rounded-sm outline outline-2 outline-[#e52923]  px-[17px]">
-              Checkout
-            </button>
+            <Group className="flex items-center mt-3 text-sm font-semibold justify-center w-full">
+              <button className="w-full flex-1  rounded-md text-primary bg-[#E529231A] outline-none py-2">
+                Go to Cart
+              </button>
+              <button className="w-full flex-1 rounded-sm outline-primary  outline-none py-1 outline-1 text-primary">
+                Checkout
+              </button>
             </Group>
           </Modal>
         </Box>
