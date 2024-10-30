@@ -3,6 +3,7 @@ import Navbar from "../components/shared/Navbar";
 import { useWindowScroll } from "@mantine/hooks";
 import { Affix, Button, Transition } from "@mantine/core";
 import { IoIosArrowUp } from "react-icons/io";
+import CategoryNav from "../components/shared/CategoryNav";
 
 const Main = () => {
   const [scroll, scrollTo] = useWindowScroll();
@@ -10,7 +11,10 @@ const Main = () => {
     <div>
       {/* header */}
       <Navbar />
-      <div className="bg-lighterBg">
+      <div className="hidden lg:block">
+      <CategoryNav />
+      </div>
+      <div className="bg-lighterBg  -z-10">
         <Outlet />
       </div>
       <Affix hidden="sm" position={{ bottom: 25, left: 20 }}>

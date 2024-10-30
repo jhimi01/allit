@@ -7,7 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Categories = () => {
   return (
-    <div className="space-x-1">
+    <div className="space-x-1 sticky top-0 left-0">
       {categoryData.map((category, index) => (
         <Menu
           key={index}
@@ -15,7 +15,6 @@ const Categories = () => {
           offset={15}
           arrowPosition="center"
           shadow="md"
-        
         >
           <Menu.Target>
             <Link to={category?.path}>
@@ -27,34 +26,33 @@ const Categories = () => {
           </Menu.Target>
 
           <Menu.Dropdown
-           classNames={{
-            dropdown: classes.dropdown,
-          }}
-  style={{
-    backgroundColor: "#fff", // Ensure this is set directly
-    padding: "10px", // Add padding for consistent background fill
-    boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Optional shadow for contrast
-    borderRadius: "4px", // Optional border radius for styling
-    overflowY: "auto", // Allow scroll if items exceed max height
-    maxHeight: "calc(8 * 50px)" // Constrain height to 8 rows
-  }}
-  className={classes.menuDropdown}
->
-  {category?.items.map((categoryitem, index) => (
-    <Menu.Item
-      className={classes.menuDropdownitems}
-      style={{
-        color: "#808080",
-        fontSize: "18px",
-        fontWeight: "600"
-      }}
-      key={index}
-    >
-      {categoryitem.itemsLabel}
-    </Menu.Item>
-  ))}
-</Menu.Dropdown>
-
+            classNames={{
+              dropdown: classes.dropdown,
+            }}
+            style={{
+              backgroundColor: "#fff", // Ensure this is set directly
+              padding: "10px", // Add padding for consistent background fill
+              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Optional shadow for contrast
+              borderRadius: "4px", // Optional border radius for styling
+              overflowY: "auto", // Allow scroll if items exceed max height
+              maxHeight: "calc(8 * 50px)", // Constrain height to 8 rows
+            }}
+            className={classes.menuDropdown}
+          >
+            {category?.items.map((categoryitem, index) => (
+              <Menu.Item
+                className={classes.menuDropdownitems}
+                style={{
+                  color: "#808080",
+                  fontSize: "18px",
+                  fontWeight: "600",
+                }}
+                key={index}
+              >
+                {categoryitem.itemsLabel}
+              </Menu.Item>
+            ))}
+          </Menu.Dropdown>
         </Menu>
       ))}
     </div>

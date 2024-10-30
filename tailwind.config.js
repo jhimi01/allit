@@ -8,7 +8,8 @@ export default {
       lighterBg: "#f4faff",
       border: "#dadada",
       cardbg: "#f8fafc",
-      bluegray: "#475569"
+      bluegray: "#475569",
+      white: "#fff"
     },
     extend: {},
   },
