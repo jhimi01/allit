@@ -1,6 +1,8 @@
 import {
+  Accordion,
   Box,
   Burger,
+  Divider,
   Drawer,
   Group,
   Image,
@@ -9,6 +11,8 @@ import {
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
+import categoryData from "../categories/categoryData ";
+import React from "react";
 
 const MobileNav = () => {
   const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
@@ -28,8 +32,36 @@ const MobileNav = () => {
         title="Categories"
         position="left"
         size="80%"
+        pb="100px"
       >
-        {/* Drawer content */}
+        <Accordion className="pb-10">
+          {categoryData.map((category, index) => (
+            <Accordion.Item key={index} value={category?.label}>
+              <Accordion.Control>
+                <Box className="flex items-center gap-3">
+                  {category.icon && (
+                    <Image
+                      src={category.icon}
+                      className="w-4 h-4"
+                      alt={category?.label}
+                    />
+                  )}
+                  {category.label}
+                </Box>
+              </Accordion.Control>
+              <Accordion.Panel pb={15}>
+                {category.items.map((item, idx) => (
+                  <React.Fragment key={idx}>
+                    <span className="text-gray-500 text-sm ml-5 text-[#333] font-semibold">
+                      {item.itemsLabel}
+                    </span>
+                    {idx < category.items.length - 1 && <Divider my="xs" />}
+                  </React.Fragment>
+                ))}
+              </Accordion.Panel>
+            </Accordion.Item>
+          ))}
+        </Accordion>
       </Drawer>
 
       <div className="flex items-center justify-between">

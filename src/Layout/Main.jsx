@@ -7,6 +7,7 @@ import CategoryNav from "../components/shared/CategoryNav";
 import ScrollToTop from "../components/shared/ScrollToTop";
 import CartIcon from "../components/shared/CartIcon";
 import CompareIcon from "../components/shared/CompareIcon";
+import MobileFooter from "../components/shared/MobileFooter";
 
 const Main = () => {
   const [scroll, scrollTo] = useWindowScroll();
@@ -37,8 +38,11 @@ const Main = () => {
       <CompareIcon />
       <CartIcon />
       {/* footer */}
+
      </div>
-      {/* footer */}
+     <div className="lg:hidden">
+     <MobileFooter />
+     </div>
     </div>
   );
 };
