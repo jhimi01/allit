@@ -8,7 +8,7 @@ import classes from "./Home.module.css";
 const Home = () => {
   return (
     <div className="lg:w-11/12 px-2 mx-auto pt-[32px] pb-[28px]">
-      <Flex className="gap-10 lg:flex-row  flex-col-reverse">
+      <Flex className="gap-10 lg:flex-row flex-col-reverse">
         <Box className="w-full lg:w-[25%] border-border border-[1px] bg-cardbg lg:py-[56px] px-[24px]">
           <h2 className="text-xl sm:text-2xl sm:text-start text-center leading-6 my-1 font-bold text-dark">
             Compare Products
@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         </Box>
 
-        <div className="w-full flex-1">
+        <div className="w-full h-full flex-1">
           <Carousel
             withIndicators
             loop
