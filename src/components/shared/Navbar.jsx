@@ -101,7 +101,7 @@ const Navbar = () => {
                   maxDropdownHeight={430}
                   sx={{
                     item: {
-                      fontSize: '12px !important',
+                      fontSize: "12px !important",
                     },
                   }}
                 />
