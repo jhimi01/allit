@@ -4,6 +4,9 @@ import { useWindowScroll } from "@mantine/hooks";
 import { Affix, Button, Transition } from "@mantine/core";
 import { IoIosArrowUp } from "react-icons/io";
 import CategoryNav from "../components/shared/CategoryNav";
+import ScrollToTop from "../components/shared/ScrollToTop";
+import CartIcon from "../components/shared/CartIcon";
+import CompareIcon from "../components/shared/CompareIcon";
 
 const Main = () => {
   const [scroll, scrollTo] = useWindowScroll();
@@ -29,6 +32,12 @@ const Main = () => {
           )}
         </Transition>
       </Affix>
+     <div className="hidden lg:block">
+      <ScrollToTop />
+      <CompareIcon />
+      <CartIcon />
+      {/* footer */}
+     </div>
       {/* footer */}
     </div>
   );

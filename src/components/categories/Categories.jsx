@@ -11,7 +11,7 @@ const Categories = () => {
       {categoryData.map((category, index) => (
         <Menu
           key={index}
-          trigger="hover"
+          trigger="click-hover"
           offset={15}
           arrowPosition="center"
           shadow="md"
@@ -36,9 +36,11 @@ const Categories = () => {
               borderRadius: "4px", // Optional border radius for styling
               overflowY: "auto", // Allow scroll if items exceed max height
               maxHeight: "calc(8 * 50px)", // Constrain height to 8 rows
+          
             }}
             className={classes.menuDropdown}
           >
+            <div className={`bg-white ${category?.items.length > 7 ? "grid grid-cols-3 gap-3" : ""}  `}>
             {category?.items.map((categoryitem, index) => (
               <Menu.Item
                 className={classes.menuDropdownitems}
@@ -52,6 +54,7 @@ const Categories = () => {
                 {categoryitem.itemsLabel}
               </Menu.Item>
             ))}
+            </div>
           </Menu.Dropdown>
         </Menu>
       ))}

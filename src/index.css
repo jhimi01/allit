@@ -38,11 +38,20 @@
   font-size: 14px !important;
 }
 
+.m_390b5f4 svg{
+  display: none !important;
+}
+.m_390b5f4[aria-selected="true"]{
+  color: #e52923 !important;
+}
 .m_811560b9 {
   font-size: 16px !important;
   gap: 4px;
   margin-right: 1px;
 }
+
+
+
 
 /* dropdown */
 .m_8fb7ebe7 {
@@ -50,16 +59,21 @@
   border: none !important;
   outline: none !important;
   color: #e5332d !important;
+  width: 120px !important;
 }
 
-.m_46b77525:hover .m_8fb7ebe7 {
-  /* color: #e5332d !important; */
+.m_8fb7ebe7::placeholder {
+  color: #6b7280 !important;
 }
+
+.m_8fb7ebe7:hover::placeholder {
+  color: #e5332d !important;
+}
+
 
 /* dropdown content */
 .m_38a85659 {
-  width: 300px !important;
-  /* padding: 5px !important; */
+  width: 250px !important;
   height: auto !important;
   overflow-y: var(--border) !important;
   background-color: #fff !important;

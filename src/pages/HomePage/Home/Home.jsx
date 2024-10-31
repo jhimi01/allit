@@ -8,7 +8,7 @@ import { IoSearch } from "react-icons/io5";
 
 const Home = () => {
   return (
-    <div className="w-11/12 mx-auto pt-[32px] pb-[28px]">
+    <div className="lg:w-11/12 px-2 mx-auto pt-[32px] pb-[28px]">
       <Flex className="gap-10 lg:flex-row flex-col-reverse">
         <Box className="w-full lg:w-[25%] border-border border-[1px] bg-cardbg lg:py-[56px] px-[24px]">
           <h2 className="text-xl sm:text-2xl sm:text-start text-center leading-6 my-1 font-bold text-dark">

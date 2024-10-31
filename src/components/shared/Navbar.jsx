@@ -6,7 +6,7 @@ import {
   FaLinkedin,
   FaYoutube,
 } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
+import { IoIosArrowDown, IoMdMail } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 import { MdLocalOffer } from "react-icons/md";
 import { IoSearch, IoPersonSharp } from "react-icons/io5";
@@ -83,7 +83,8 @@ const Navbar = () => {
               <Image src="./all-it.webp" w="auto" h={70} />
               <Box className="flex gap-2 items-center justify-center my-5 px-[7px] py-[2px] rounded-md bg-[#EEEEEE] w-full text-xl">
                 <Select
-                  placeholder="Category"
+                  placeholder="Categories"
+                  rightSection={<IoIosArrowDown size={14} color="#e52923" />}
                   data={[
                     "Desktop",
                     "Monitor",
@@ -109,7 +110,7 @@ const Navbar = () => {
                   type="text"
                   placeholder="Search"
                   style={{ backgroundColor: "transparent" }}
-                  className="text-primary bg-transparent outline-none w-full placeholder:text-[#b4b4b4] placeholder:text-[16px] border-none"
+                  className="text-dark bg-transparent outline-none w-full placeholder:text-[#b4b4b4] placeholder:text-[16px] text-[16px] px-3 border-none"
                 />
                 <IoSearch className="text-[#444] text-[34px]" />
               </Box>

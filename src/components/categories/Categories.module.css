@@ -1,30 +1,35 @@
 /* Categories.module.css */
 .dropdown {
-  /* outline: 2px solid #fe0d45; */
-  /* outline-offset: -2px !important; */
   width: auto !important;
   height: auto !important;
   background-color: #fff !important;
   background: #fff !important;
+  z-index: 1000000 !important;
 }
 .menuDropdown {
   display: block !important;
-  max-height: calc(
-    8 * 50px
-  ); /* Assuming each item has ~50px height, adjust if needed */
-  column-count: auto; /* Automatically determines columns based on item count */
-  column-width: 150px; /* Adjust width for each column */
-  column-gap: 20px; /* Space between columns */
-  overflow-y: auto; /* Allows scrolling if items exceed max-height */
+  /* max-height: calc(8 * 50px); */
+  column-count: auto;
+  /* column-width: 150px; */
+  /* column-gap: 20px; */
+  display: flex !important;
+  flex-wrap: wrap !important;;
+  flex-direction: row !important;
+  overflow-y: auto;
+  /* height: 200px !important; */
+  background: #fff !important;
+  z-index: 100000000000 !important;
+  /* position: relative !important; */
   background-color: #fff !important;
 }
 
 .menuDropdownitems {
   font-size: 16px !important;
   padding: 10px 10px !important;
-  display: inline-block; /* Ensures each item fits within a column */
-  width: 100%; /* Takes full column width */
-  break-inside: avoid; /* Prevents items from breaking between columns */
+  display: inline-block;
+  width: 100%;
+  /* height: 20px; */
+  break-inside: avoid;
   background-color: #fff !important;
 }
 
