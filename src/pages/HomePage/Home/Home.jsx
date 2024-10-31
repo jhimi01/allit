@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         </Box>
 
-        <div className="lg:w-[75%] w-full">
+        <div className="w-full flex-1">
           <Carousel
             withIndicators
             loop
@@ -48,24 +48,27 @@ const Home = () => {
               control: classes.control,
               controls: classes.controls,
             }}
-            className="lg:h-[500px] w-full"
+            className={classes.carousel} // Apply the carousel class here
           >
             <Carousel.Slide>
               <Image
-                className="w-full h-full object-cover"
+                className={classes.slideImage} // Use the slide-image class for styling
                 src="https://allit.com.bd/_next/image?url=https%3A%2F%2Fallit.com.bd%3A81%2Fuploads%2Fall%2FG0gQP2T5uzyoNSKKTuvjfRpyju2Khf3VcnyzWqJg.jpg&w=1080&q=75"
+                alt="Slide 1"
               />
             </Carousel.Slide>
             <Carousel.Slide>
               <Image
-                className="w-full h-full object-cover"
+                className={classes.slideImage}
                 src="https://allit.com.bd/_next/image?url=https%3A%2F%2Fallit.com.bd%3A81%2Fuploads%2Fall%2FNOL0uAVWlm6q7vPAt6NhRtQVtG1EbX1NBOjVpwfY.jpg&w=1080&q=75"
+                alt="Slide 2"
               />
             </Carousel.Slide>
             <Carousel.Slide>
               <Image
-                className="w-full h-full object-cover"
+                className={classes.slideImage}
                 src="https://allit.com.bd/_next/image?url=https%3A%2F%2Fallit.com.bd%3A81%2Fuploads%2Fall%2F4fhEaaXyfibETHENI8utifaQxoPLuQjxi05wN45q.jpg&w=1080&q=75"
+                alt="Slide 3"
               />
             </Carousel.Slide>
           </Carousel>

@@ -18,9 +18,11 @@ const Categories = () => {
         >
           <Menu.Target>
             <Link to={category?.path}>
-              <Button>
-                {category?.label}
-                <IoIosArrowDown className=" text-center text-bluegray text-[9px]" />
+              <Button className="ml-1">
+               <h4 className="">
+               {category?.label}
+               </h4>
+                <IoIosArrowDown className="text-center text-bluegray text-[9px]" />
               </Button>
             </Link>
           </Menu.Target>
@@ -36,24 +38,27 @@ const Categories = () => {
               borderRadius: "4px", // Optional border radius for styling
               overflowY: "auto", // Allow scroll if items exceed max height
               maxHeight: "calc(8 * 50px)", // Constrain height to 8 rows
-          
             }}
             className={classes.menuDropdown}
           >
-            <div className={`bg-white ${category?.items.length > 7 ? "grid grid-cols-3 gap-3" : ""}  `}>
-            {category?.items.map((categoryitem, index) => (
-              <Menu.Item
-                className={classes.menuDropdownitems}
-                style={{
-                  color: "#808080",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                }}
-                key={index}
-              >
-                {categoryitem.itemsLabel}
-              </Menu.Item>
-            ))}
+            <div
+              className={`bg-white ${
+                category?.items.length > 7 ? "grid grid-cols-3 gap-3" : ""
+              }  `}
+            >
+              {category?.items.map((categoryitem, index) => (
+                <Menu.Item
+                  className={classes.menuDropdownitems}
+                  style={{
+                    color: "#808080",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                  }}
+                  key={index}
+                >
+                  {categoryitem.itemsLabel}
+                </Menu.Item>
+              ))}
             </div>
           </Menu.Dropdown>
         </Menu>
